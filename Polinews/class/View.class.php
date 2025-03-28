@@ -13,9 +13,15 @@ class View
     {
         $message = $this->startHTML();
         $message .= $this->createHead();
-        $message .= $this->createNav();
+        $message .= $this->makeHead();
+        $message .= $this->endHead();
         $message .= $this->createBody();
+        $message .= $this->createHeader();
+        $message .= $this->createMain();
+        $message .= $this->makeMain();
+        $message .= $this->endMain();
         $message .= $this->createFooter();
+        $message .= $this->endBody();        
         $message .= $this->endHTML();
         return $message;
     }
@@ -23,29 +29,100 @@ class View
     public function startHTML()
     {
         $message = '<!DOCTYPE html>
-                    <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">';
+        <html lang="en">';
         return $message;
     }
-
+    
     public function createHead()
     {
-        $message = '';
+        $message = '<head>';
         return $message;
     }
 
-    public function createNav()
+    public function makeHead()
+    {
+        $message = '
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900
+        &display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/header.js"></script>
+        <script src="js/script.js"></script>';
+        
+        return $message;
+    }
+    
+    public function endHead()
+    {
+        $message = '</head>';
+        return $message;
+    }
+
+
+    public function createBody()
+    {
+        $message = '<body>';
+        return $message;
+    }
+    
+    public function createHeader()
+    {
+        $message = '<header>
+        <div id="logo">
+            <a href="#"><img src="logo.png" alt="Logo"></a>
+        </div>
+
+        <div id="header-links">
+            <a href="#">On Intelligent Research</a>
+            <a href="#">About Polinews</a>
+            <a href="#">Press Review</a>
+        </div>
+
+        <div id="header-right">
+            <div id="languages">
+                <div id="language-selected">EN</div>
+                <div id="language-dropdown">
+                    <div onclick="changeLanguage('FR')">FR</div>
+                    <div onclick="changeLanguage('VT')">VT</div>
+                </div>
+            </div>
+
+            <div><a href="#">Log In</a></div>
+            <div id="create-account"><a href="#">Create account</a></div>
+        </div>
+    </header>';
+        return $message;
+    }
+    
+    public function createMain()
     {
         $message = '';
         return $message;
     }
-
-    public function createBody()
+    
+    public function makeMain()
+    {
+        $message = '';
+        return $message;
+    }
+    
+    public function endMain()
     {
         $message = '';
         return $message;
     }
     
     public function createFooter()
+    {
+        $message = '';
+        return $message;
+    }
+    
+    public function endBody()
     {
         $message = '';
         return $message;
