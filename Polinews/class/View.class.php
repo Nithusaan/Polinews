@@ -100,7 +100,7 @@ class View
     
     public function createMain()
     {
-        $message = '';
+        $message = '<main>';
         return $message;
     }
     
@@ -112,7 +112,7 @@ class View
     
     public function endMain()
     {
-        $message = '';
+        $message = '</main>';
         return $message;
     }
     
@@ -124,13 +124,13 @@ class View
     
     public function endBody()
     {
-        $message = '';
+        $message = '</body>';
         return $message;
     }
     
     public function endHTML()
     {
-        $message = '</body></html>';
+        $message = '</html>';
         return $message;
     }
 
