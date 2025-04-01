@@ -1,0 +1,618 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      width: 100%;
+      height: 80px;
+      border: 1px solid #000;
+      border-radius: 0 0 22px 22px;
+      background: #f8f8f8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo à gauche */
+    #logo {
+      margin-left: 4vw;
+      display: flex;
+      align-items: center;
+    }
+
+    #logo img {
+      height: 40px; /* Ajustez selon la taille de votre logo */
+      width: auto;
+    }
+
+    /* Liens au centre */
+    #header-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    #header-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Partie droite (langues, login, create account) */
+    #header-right {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-right: 2vw;
+    }
+
+    #languages {
+      position: relative;
+      cursor: pointer;
+    }
+
+    #language-selected {
+      padding: 5px 10px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background: white;
+    }
+
+    #language-dropdown {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: white;
+      border: 1px solid #000;
+      border-radius: 5px;
+      width: 100px;
+      text-align: center;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #language-dropdown div {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    #language-dropdown div:hover {
+      background: #ddd;
+    }
+
+    #create-account {
+      display: flex;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      border-radius: 5px;
+      background: #C2C2C2;
+    }
+
+    /* ---- SECTION HERO ---- */
+    #hero {
+      display : flex;
+      text-align: center;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    #hero-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #hero h1 {
+      font-size: 2rem;
+      color: #24214A;
+    }
+
+    #hero p {
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.4em;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 15px;
+      height: 37px;
+      border-radius: 5px;
+      background: #10A5E4;
+      cursor: pointer;
+    }
+
+    .get-started {
+      background: #C2C2C2;
+      border: none;
+    }
+
+    .log-in-homepage {
+      border: 0.25px solid #000;
+      background: #10A5E4;
+    }
+
+    .hero-image {
+      width: 600px;
+      max-width: 90%;
+      height: 300px;
+      margin: 0 auto;
+      background-color: #D9D9D9;
+      border-radius: 10px;
+    }
+
+    /* ---- FRAME 13 & AUTRES BLOCS ---- */
+    #frame13 {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .frame13-block {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .frame13-text {
+        border-radius: 30px;
+        background: #D9D9D9;
+        width: 559px;
+        height: 289px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .frame13-text h2 {
+      margin-bottom: 10px;
+      color: #24214A;
+      font-family: Inter;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .frame13-text p {
+      line-height: 1.4em;
+      color: #000;
+      font-family: Inter;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    /* ---- SECTION CATEGORIE ---- */
+
+    /* Conteneur principal du carrousel */
+    .carousel-container {
+      position: relative;      /* nécessaire pour positionner les boutons */
+      width: 80%;             /* largeur du carrousel */
+      margin: 0 auto;         /* centrage horizontal */
+      overflow: hidden;       /* masque les éléments qui débordent */
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Zone qui contient les cartes des catégories */
+    .carousel {
+      display: flex;           /* les cartes s'alignent sur une ligne */
+      transition: transform 0.3s ease-in-out; /* animation lors du défilement */
+      gap: 49px;
+    }
+
+    /* Style de chaque carte de catégorie */
+    .category-card {
+      width: 391px;
+      height: 229px;
+      flex-shrink: 0;
+      border-radius: 30px;
+      background: #D9D9D9;
+      position: relative;      /* pour positionner le texte à l'intérieur */
+      display: flex;
+      align-items: flex-end;   /* aligne verticalement en bas */
+      justify-content: flex-end; /* aligne horizontalement à droite */
+      padding: 15px;           /* espace interne */
+      font-size: 1.5rem;       /* texte plus grand */
+      font-weight: 700;
+    }
+
+    /* Style des boutons de navigation (gauche/droite) */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ddd;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      transition: background-color 0.2s ease;
+      z-index: 1; /* les boutons doivent être au-dessus du contenu */
+    }
+
+    .carousel-btn:hover {
+      background-color: #ccc;
+    }
+
+    .left-btn {
+      left: 10px; /* positionné à gauche */
+    }
+
+    .right-btn {
+      right: 10px; /* positionné à droite */
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    
+    /* fin homepage */
+
+    /* FOOTER */
+
+    footer {
+  background-color: #494949; /* Couleur de fond sombre */
+  color: #fff;              /* Texte en blanc */
+  padding: 20px 40px;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+height: 285px;
+flex-shrink: 0;
+}
+
+/* Disposition en deux lignes (top et bottom) */
+.footer-top,
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.footer-logo .logo-box {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Zone droite (langue + create account) */
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Bouton de sélection de langue */
+.language-selector button {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 6px 12px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.language-selector .caret {
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
+.footer-links{
+  gap: 30px;
+}
+
+
+/*  Register  */
+
+/* ----- CONTENEUR PRINCIPAL ----- */
+    .popup-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .popup {
+      display: flex;
+      flex-direction: row;
+      background-color: #fff;
+      width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    /* ----- COLONNE GAUCHE (Créer un compte) ----- */
+    .popup-left {
+      flex: 1;
+      padding: 40px;
+      border-right: 1px solid #ddd;
+    }
+    
+    .popup-left h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .btn-create-account {
+      width: 45%;
+      padding: 12px;
+      margin-top: 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .btn-create-account:hover {
+      background-color: #555;
+    }
+    
+    /* ----- Boutons Google / Apple ----- */
+    .social-buttons {
+      margin-top: 20px;
+    }
+    
+    .social-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .social-button:hover {
+      background-color: #f7f7f7;
+    }
+    
+    /* ----- COLONNE DROITE (Se connecter) ----- */
+    .popup-right {
+      width: 300px;
+      padding: 40px;
+      background-color: grey;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .popup-right h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    
+    .popup-right p {
+      margin-bottom: 20px;
+      line-height: 1.4;
+      color: #eee;
+    }
+    
+    .btn-login {
+      padding: 12px;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .btn-login:hover {
+      background-color: #555;
+    }
+
+    /* ----- Message (ancien Toast) ----- */
+    .message {
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      color: #fff;
+    }
+    
+/*  end register  */
+
+
+/* videopage  */
+
+/* Contenu principal */
+                        .container {
+                            text-align: center;
+                            padding: 60px 30px;
+                            flex: 1;
+                            width: 80%;
+                            max-width: 1000px;
+                            margin: 0 auto;
+                        }
+
+                        .video-placeholder {
+                            width: 700px;
+                            height: 400px;
+                            background-color: #ddd;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 20px auto;
+                        }
+
+                        /* Styles pour les nouveaux containers */
+                        .info-containers {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 80%;
+                            max-width: 1000px;
+                            margin: 0 auto;
+                            padding: 40px 0;
+                            gap: 30px;
+                        }
+
+                        .info-container {
+                            flex: 1;
+                            text-align: center;
+                            padding: 20px;
+                            background-color: #fff;
+                            border-radius: 15px;
+                            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            border: 2px solid #000;
+                        }
+
+                        .info-container h2 {
+                            font-size: 1.3rem;
+                            margin-bottom: 10px;
+                            color: #333;
+                        }
+
+                        .info-container p {
+                            font-size: 0.95rem;
+                            line-height: 1.4;
+                            color: #666;
+                            text-align: center;
+                            max-width: 90%;
+                        }
+
+                        /* Ajout d\'un cercle image en haut du container */
+                        .info-container::before {
+                            content: "";
+                            width: 60px;
+                            height: 60px;
+                            background-color: #ccc;
+                            border-radius: 50%;
+                            margin-bottom: 15px;
+                            border: 2px solid #000;
+                        }
+
+                        /* Responsive pour les containers */
+                        @media (max-width: 768px) {
+                            .info-containers {
+                                flex-direction: column;
+                                gap: 20px;
+                            }
+                            
+                            .info-container {
+                                width: 100%;
+                            }
+                        }
+
+ /* Footer */
+                        .footer {
+                            background-color: #e0e0e0;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            padding: 20px;
+                        }
+
+                        .footer-left {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .footer-links {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 15px;
+                            margin-top: 30px;
+                            align-items: center;
+                        }
+
+                        .footer-right {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        }
+
+                        .footer-buttons {
+                            display: flex;
+                            gap: 10px;
+                            align-items: center;
+                        }
+
+                        .footer-images {
+                            display: flex;
+                            gap: 10px;
+                            margin-top: 10px;
+                        }
+
+                        .footer-images div {
+                            width: 40px;
+                            height: 40px;
+                            background-color: #ccc;
+                            cursor: pointer;
+                        }
+
+                        .button {
+                            padding: 8px 15px;
+                            background-color: #ccc;
+                            border: none;
+                            cursor: pointer;
+                            border-radius: 5px;
+                        }
+                        
+/*  fin footer  */
